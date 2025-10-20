@@ -1,0 +1,425 @@
+---
+layout: post
+title: "我的世界生电玩法模组介绍"
+date: 2025-01-16 14:00:00 +0800
+categories: 游戏
+---
+
+# 有关我的世界生电玩法的模组介绍
+
+## [JEI物品管理器](https://www.mcmod.cn/class/459.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端可选
+
+将鼠标移动到对应物品上，按**R**键可以查询该物品的合成方式，按**U**键可以查询该物品的用途（可以用来合成什么）
+
+## [Xaero的小地图](https://www.mcmod.cn/class/1701.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端可选
+
+在游戏中按**U**键查看完整的路径点菜单
+
+按**B**键可以快捷建立一个路径点
+
+通常可以搭配Xaero的世界地图使用
+
+## [Xaero的世界地图](https://www.mcmod.cn/class/1483.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端可选
+
+在游戏中按**M**可以打开一个世界地图，很直观
+
+## 地毯四件套
+
+### [Carpet地毯](https://www.mcmod.cn/class/2361.html)
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2), [文件覆盖](https://www.mcmod.cn/modlist.html?api=7)
+- 运行环境: 客户端可选, 服务端需装
+
+该模组提供了一些地毯规则（carpet），包括但不限于性能优化，游戏机制与特性等；同时能够监控游戏中的一些事件，player指令可以**召唤假人**，这也是carpet最核心的一个功能
+
+常用指令
+
+/carpet: 显示当前地毯版本和非原版规则列表。
+
+/carpet list: 列出所有可用的地毯规则。
+
+/carpet list [<tag>]: 列出特定标签的所有地毯规则。
+
+/carpet [<rule>] [<value>]: 设置指定地毯规则的值。
+
+/carpet setDefault <rule> <value>: 将指定地毯规则的默认值设置为给定值。
+
+/carpet removeDefault <rule>: 删除指定地毯规则的用户默认设置。
+
+/log: 用于监控游戏中的特定事件。
+
+/log counter [颜色]: 订阅指定颜色的计数器日志。
+
+/log fallingBlocks [brief/full]: 记录下落方块的日志。
+
+**/log mobcaps [dimension/dynamic]: 订阅生物容量日志。**
+
+/log packets: 订阅网络数据包日志。
+
+/log pathfinding [2/5/10]: 订阅寻路日志。
+
+/log projectiles [brief/full]: 记录投射物的日志。
+
+/log tnt [brief/full]: 在 TNT 爆炸时提供详细信息。
+
+**/log tps: 订阅 TPS 日志，显示 TPS 和 MSPT。**
+
+/tick: 控制游戏刻的各个方面。**(目前已加入原版.)**
+
+/tick health [ticks]: 返回游戏在各种任务上花费的平均时间。
+
+/tick freeze: 停止实体、世界时间、方块更新和红石的处理。
+
+/tick step [ticks]: 在游戏冻结时推进世界给定数量的游戏刻。
+
+/tick rate [tps]: 改变 TPS（每秒游戏刻数）。
+
+/tick warp [ticks] [cmd]: 让游戏在设定的时间内尽可能快运行。
+
+/distance: 用于测量游戏中两点之间的距离。
+
+/distance from <坐标> to <坐标>: 返回两指定坐标之间的距离。
+
+/distance from <坐标>: 储存玩家的初始坐标。
+
+/distance to <坐标>: 假定已经用 to 命令存储了初始坐标，输出至目标位置的距离。
+
+/draw: 用于在游戏中绘制各种形状。
+
+/draw sphere <中心> <半径> <方块>: 使用指定的方块围绕指定的圆心坐标生成具有指定半径的球体。
+
+/info: 获取方块或实体的信息。
+
+/info block <坐标>: 获取指定坐标的方块信息。
+
+/info entity <选择器>: 获取指定选择器中的实体信息。
+
+/counter: 与 /hopperCounters 规则相关，用于计数通过漏斗的物品。
+
+/counter <颜色?> reset: 重置指定颜色的计数器。
+
+/counter <颜色?>: 查询指定颜色的计数器的值。
+
+#### 假人操作
+
+/player: 用于控制或生成玩家。
+
+**/player <name> spawn: 在当前位置生成具有给定名称的假人玩家。**
+
+比如，我想在我当前站立的位置生成一个id为fish1的假人，那我只需要键入
+
+```
+/player fish1 spawn
+```
+
+这样就可以在我当前的位置，生成一个id为fish1的假人，（如果没有开假人无碰撞箱的话，那么这种方式生成的假人会在你碰到他的时候移动）
+
+- **... [in] <gamemode>：在当前位置生成指定游戏模式的玩家。**
+- **... [at] <position>：在指定位置生成具有给定名称的假人玩家。**
+  - **... [facing] [facing]：在指定位置生成具有给定名称，指定朝向的假人玩家。**
+    - **... [in] <dimension>：在指定维度的指定位置生成具有指定名称，指定朝向的假人玩家。**
+      - **... [in] <gamemode>：在指定维度的指定位置生成具有指定名称、指定朝向，指定游戏模式的假人玩家。**
+
+针对上述可选项，一个具体的操作是，首先在键盘上摁F3+c键，可以自动复制当前的位置信息，包括当前的位置坐标和视角朝向，以下是一个复制后的实例
+
+```
+/execute in minecraft:overworld run tp @s 56.78 67.00 -392.76 57.93 63.15
+```
+
+我们只需要后面五个数字，其中前三个是坐标，后两个是朝向，也就是说，如果我想生产一个在固定坐标固定朝向的假人，我们只需要
+
+```
+/player fish1 spawn at 56.78 67.00 -392.76 facing 57.93 63.15
+```
+
+这样就可以了
+
+**/player <name> attack [continuous | interval <ticks> | once]: 控制玩家持续、间隔一定时间（ticks）或单次左击。**
+
+**/player <name> use [continuous | interval <ticks> | once]: 控制玩家持续、间隔一定时间（ticks）或单次右击。**
+
+/player <name> mount [anything]: 玩家骑乘附近可骑乘的东西。
+
+/player <name> dismount: 玩家从骑乘的实体上下来。
+
+/player <name> drop: 玩家丢弃他们当前持有的物品。
+
+/player <name> dropStack: 玩家丢弃成组的物品。
+
+/player <name> jump: 玩家执行跳跃动作。
+
+**/player <name> kill: 杀死玩家。****这也是用于下线假人的操作**
+
+/player <name> look <up | down | north | south | east | west | at <x y z>>: 玩家看向给定的方向或坐标。
+
+/player <name> move <backward | forward | left | right>: 玩家向给定的方向移动。
+
+/player <name> shadow: 使用服务器上的假玩家替换您，仅适用于服务器（不适用于单人游戏）。
+
+/player <name> sneak: 玩家执行蹲下动作。
+
+/player <name> unsneak: 玩家取消蹲下动作。
+
+/player <name> sprint: 玩家开始疾跑。
+
+/player <name> unsprint: 玩家停止疾跑。
+
+**/player <name> stop: 玩家停止移动并取消正在执行的所有操作。**
+
+/player <name> swapHands: 玩家交换主副手的物品。
+
+/player <name> turn: 玩家转动。
+
+/carpet carpetCommandPermissionLevel [<value>]: 设置使用 Carpet 命令所需的权限级别，可以是 ops 或特定的权限级别数字。
+
+### [Carpet Extra地毯扩展](https://www.mcmod.cn/class/3325.html)
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2)
+- 运行环境: 客户端可选, 服务端需装
+
+地毯端拓展让地毯端的功能更多，功能见下：
+
+- 精准方块放置协议（为[litematica](https://www.mcmod.cn/class/2261.html)提供）；
+- 有自动合成功能的发射器；
+- 方块状态同步；
+- 给鸡剪羽毛；
+- 牧师种地狱疣；
+- ping 命令启用；
+- 比较器检测时钟时间；
+- 丛林神庙只刷苦力怕；
+- 发射器放置方块；
+- 发射器饲养动物；
+- 发射器挤奶；
+- 发射器播放唱片；
+- 发射器耕地；
+- 发射器调节/激活物品；
+- 龙蛋破基岩；
+- 龙息转换圆石为末地石；
+- 火焰弹转换圆石为地狱岩；
+- 漏斗矿车吸东西 8 游戏刻冷却。
+
+### [Carpet TIS Addition](https://carpet.tis.world/zh-Hans/)
+
+点击上述超链接可跳转官方文档查看功能
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2)
+- 运行环境: 客户端可选, 服务端需装
+
+### [[GCA]Gugle的Carpet附加包](https://www.mcmod.cn/class/7305.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [文件覆盖](https://www.mcmod.cn/modlist.html?api=7)
+- 运行环境: 客户端可选, 服务端需装
+
+添加了有关假人的一些地毯规则，如打开假人背包，假人自动切换工具、自动补货，假人钓鱼等
+
+## [Quick Shulker](https://www.mcmod.cn/class/4322.html)
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2)
+- 运行环境: 客户端需装, 服务端需装
+
+Quick Shulker 允许你在不放下[潜影盒](https://www.mcmod.cn/item/473601.html)（1.1.13 后还包括[末影箱](https://www.mcmod.cn/item/51.html)和[工作台](https://www.mcmod.cn/item/52.html)）的情况下，按下一个按钮实现快速打开。
+
+Quick Shulker 有多种可配置的打开方法，所有这些你都可以启用/禁用如图所示，从上至下为：
+
+- 在拿着物品时按下绑定键；
+- 在拿着物品时右键单击；
+- 当鼠标悬停在物品栏中的物品上时按下绑定键；
+- 当鼠标悬停在物品栏中的物品上右键单击该物品。
+
+## 优化类
+
+### [钠Sodium](https://www.mcmod.cn/class/2785.html)
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端无效
+
+### [Iris](https://www.mcmod.cn/class/3697.html)
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端无效
+
+装了以上两个之后可以装光影
+
+## [苹果皮](https://www.mcmod.cn/class/744.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端可选
+
+一个更好的食物显示mod
+
+##  [鼠标手势Mouse Tweaks](https://www.mcmod.cn/class/1162.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13), [文件覆盖](https://www.mcmod.cn/modlist.html?api=7)
+- 运行环境: 客户端需装, 服务端无效
+
+## [Jade玉](https://www.mcmod.cn/class/3482.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端可选, 服务端可选
+
+1.16+ 的玉新增了更多的功能：
+
+- 熔炉 - 显示材料，燃料与进度。
+- 唱片机 - 显示当前唱片。
+- 附魔 - 显示当前附魔台与书架附魔等级。
+- 生物信息 - 显示名称，生命值与护甲。
+- 刷怪笼 - 显示生成物。
+- 宠物 - 显示主人。
+- 村民信息 - 显示村民职业。
+- 物品容器 - 显示容器中存存储的物品（箱子、漏斗、末影箱等）。
+- 隐藏模组名 - 隐藏工具提示（Tooltips）中的 Mod 名称。（默认禁用）
+- 蜂箱 - 显示蜜蜂数量和“[honey_level](javascript:void(0);)”。
+- 盔甲架 - 显示其上的盔甲。
+- 鸡蛋 - 显示鸡还剩余多少时间会下蛋。
+- 命令方块 - 命令方块会显示当前命令行。
+- TNT - 显示它是否能[击打点燃](javascript:void(0);)。
+- 音符盒 - 显示音高和乐器。
+- 画 - 显示挂的画的名称。
+- 正确显示方块名 - 对于仙人掌盆栽，会显示“仙人掌盆栽”而不是错误的“仙人掌”。
+- 方块 - 显示方块坐标及相对坐标，距离朝向，采掘工具，注册名称与模组名称。
+- 命令方块 - 显示设置指令。
+- 红石信息 - 显示如比较器模式，红石强度等信息。
+- 头颅 - 显示头颅所属玩家名称。
+- 陷阱箱 - 显示为普通箱子。
+- 细雪 - 显示为普通雪块。
+- 可疑的沙子/沙砾 - 显示为普通沙子/沙砾。
+- 其他内容 - 显示船，末影水晶，盔甲架等更多内容。
+
+## [FTBE FTB Essentials](https://www.mcmod.cn/class/3202.html)（这个已经更改为Essential commands)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端需装
+- 前置：[FTB Library / FTB GUI Library](https://www.mcmod.cn/class/3184.html) [Architetury API](https://www.mcmod.cn/class/3434.html)
+
+添加了很多实用命令
+
+- /kickme-将自己踢出服务器
+- /trashcan-打开垃圾桶
+- /leaderboard-显示服务器排行榜，包括死亡次数、游戏时间、跳跃次数等
+- /recording-切换录制模式，用于流媒体播放者和YouTube视频制作者让其他人知道他们正在直播，会更改聊天和标签列表中的名字
+- /hat-将当前主手物品放在头盔插槽中，使其成为你的“帽子”
+- /nickname <名称...>-更改聊天中的昵称
+
+以下是作弊命令
+
+- /heal <玩家>-使玩家恢复全部生命值
+- /fly <玩家>-切换创造飞行模式
+- /god <玩家>-切换上帝模式（不会受到任何伤害，包括虚空伤害魔法伤害等）
+- /invsee <玩家>-允许查看和编辑其他玩家背包
+- /nickfor <玩家> <名称...>-更改聊天中其他玩家的昵称
+- /mute <玩家>-禁言玩家
+- /unmute <玩家>-取消禁言玩家
+- /teleport_last <玩家>-传送到最后一个已知的玩家位置
+
+以下是传送命令
+
+- /back-传送到先前的位置。可多次使用
+- /spawn-传送至出生点
+- /rtp-将你传送到世界上的随机位置，并尝试找到一个非海洋的，安全的着陆点
+- /home <家名称>-传送到家中
+- /sethome <家名称>-设置家
+- /delhome <家名称>-删除家
+- /listhomes [玩家]-列出玩家的所有的家 
+- /warp <地标名称>-传送到此地标
+- /setwarp <地标名称>-设置地标
+- /delwarp <地标名称>-删除地标
+- /listwarps-列出所有地标
+- /tpa <player>-请求传送到xxx玩家
+- /tpahere <player>-请求玩家传送到你这儿
+- /tpaccept <id>-接受请求（将在屏幕上显示一个按钮）
+- /tpadeny <id>-拒绝请求（将在屏幕上显示一个按钮）
+
+## [IPN一键背包整理](https://www.mcmod.cn/class/4104.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[Fabric Language Kotlin](https://www.mcmod.cn/class/2126.html)
+
+R+C打开配置菜单
+
+## [物品滚轮Item Scroller](https://www.mcmod.cn/class/1529.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [Rift](https://www.mcmod.cn/modlist.html?api=3), [LiteLoader](https://www.mcmod.cn/modlist.html?api=4)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[[MaLiLib]Masa's Litemod Library](https://www.mcmod.cn/class/2298.html)
+
+**I+C打开配置界面**
+
+- 仅滑动鼠标滚轮: 每次从物品栏间移动一个物品；
+- Shift + 滚动: 每次从物品栏间移动相同的一组物品。当同类物品都移走之后，最后移动鼠标光标所指的这个槽位的一组物品；
+- Ctrl + 滚动: 一次性从物品栏间移动所有同种物品；
+- Alt + 点击: 一次性从物品栏间移动所有同种物品（同 Ctrl + 滚动）；
+- Ctrl + Shift + 滚动: 一次性从物品栏间移动所有物品；
+- Alt + Shift + 单击: 一次性从物品栏间移动所有物品（同 Ctrl+ Shift + 滚动）；
+- Shift + 左键按住 + 拖动: 移走堆叠的所有物品；
+- Shift + 右键按住 + 拖动: 移走堆叠的所有物品，但是最后留下一个；
+- Ctrl + 左/右键按住 + 拖动: 所有物品每格取走一个；
+- Shift + 单击有物品的空槽位: 把所有匹配的物品放到那个槽位；
+- Shift + 单击物品栏外:把所有匹配的物品全部丢掉；
+- Ctrl + Q（丢弃键） + 左/右键按住 + 拖动: 从所有拖过的槽位中丢掉一个物品；
+- Shift + Q（丢弃键） + 右键按住 + 拖动: 从所有拖过的槽位中丢掉所有物品，但是最后留下一个；
+- Shift + Q（丢弃键） + 右键按住 + 拖动: 从所有拖过的槽位中丢掉所有物品；
+- W/S + Shift/Ctrl + 单击 (或拖动): 在物品栏中上 (W) 下 (S) 移动物品。
+
+同时，喷射合成也是基于这个mod
+
+## [MH]迷你HUD MiniHUD
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [Rift](https://www.mcmod.cn/modlist.html?api=3), [LiteLoader](https://www.mcmod.cn/modlist.html?api=4)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[[MaLiLib]Masa's Litemod Library](https://www.mcmod.cn/class/2298.html)
+
+**H+C打开配置界面**
+
+## Tweakeroo
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [Rift](https://www.mcmod.cn/modlist.html?api=3), [LiteLoader](https://www.mcmod.cn/modlist.html?api=4)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[[MaLiLib]Masa's Litemod Library](https://www.mcmod.cn/class/2298.html)
+
+**X+C打开配置界面**
+
+## Tweakermore
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[[MaLiLib]Masa's Litemod Library](https://www.mcmod.cn/class/2298.html)
+
+**K+C打开配置界面**
+
+# 一些实用的资源包（建议全部装载）
+
+## [MASA全家桶汉化包](https://space.bilibili.com/13205801?spm_id_from=333.337.0.0)
+
+## [Clean Glass & Clear Tinted Glass](https://www.curseforge.com/minecraft/texture-packs/clean-glass-tinted-glass)
+
+## [XeKr的红石显示](https://www.curseforge.com/minecraft/texture-packs/xekr-redstone-display)
+
+# 服务端的优化处理
+
+MSPT：低于50，即为正常
+
+TPS：20正常
+
+MSPT $\times$ TPS $\leq$ 1000，说明当时服务器处于正常状态
+
+实体卡顿远大于红石器件卡顿，一个村民相当于一百个无锁漏斗
+
+# 如何开始？一些基础的设置
+
+1. gamma覆写
+   x+c打开tweakeroo，在【通用功能】中搜索gamma，选项gammaOverride(伽马覆写设定)拉满到32
+   在【工具】中搜索gamma，选项gammaOverride(伽马覆写设定)绑定按键即可(或者直接更改为true)
+2. 更好的潜影盒显示
+3. FreeCamera
+   x+c打开tweakeroo，在【工具】中搜索free，选项FreeCamera绑一个常用的键即可（推荐鼠标侧键）
+
