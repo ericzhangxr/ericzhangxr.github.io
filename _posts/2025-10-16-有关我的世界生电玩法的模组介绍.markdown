@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "我的世界生电玩法模组介绍"
+title: "Minecraft"
 date: 2025-01-16 14:00:00 +0800
 categories: 游戏
 ---
 
-# 有关我的世界生电玩法的模组介绍
+# Minecraft
+
+# 强烈建议装载的mod
 
 ## [JEI物品管理器](https://www.mcmod.cn/class/459.html)
 
@@ -32,7 +34,88 @@ categories: 游戏
 
 在游戏中按**M**可以打开一个世界地图，很直观
 
-## 地毯四件套
+## [苹果皮](https://www.mcmod.cn/class/744.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端可选
+
+一个更好的食物显示mod
+
+## [Jade玉](https://www.mcmod.cn/class/3482.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端可选, 服务端可选
+
+1.16+ 的玉新增了更多的功能：
+
+- 熔炉 - 显示材料，燃料与进度。
+- 唱片机 - 显示当前唱片。
+- 附魔 - 显示当前附魔台与书架附魔等级。
+- 生物信息 - 显示名称，生命值与护甲。
+- 刷怪笼 - 显示生成物。
+- 宠物 - 显示主人。
+- 村民信息 - 显示村民职业。
+- 物品容器 - 显示容器中存存储的物品（箱子、漏斗、末影箱等）。
+- 隐藏模组名 - 隐藏工具提示（Tooltips）中的 Mod 名称。（默认禁用）
+- 蜂箱 - 显示蜜蜂数量和“[honey_level](javascript:void(0);)”。
+- 盔甲架 - 显示其上的盔甲。
+- 鸡蛋 - 显示鸡还剩余多少时间会下蛋。
+- 命令方块 - 命令方块会显示当前命令行。
+- TNT - 显示它是否能[击打点燃](javascript:void(0);)。
+- 音符盒 - 显示音高和乐器。
+- 画 - 显示挂的画的名称。
+- 正确显示方块名 - 对于仙人掌盆栽，会显示“仙人掌盆栽”而不是错误的“仙人掌”。
+- 方块 - 显示方块坐标及相对坐标，距离朝向，采掘工具，注册名称与模组名称。
+- 命令方块 - 显示设置指令。
+- 红石信息 - 显示如比较器模式，红石强度等信息。
+- 头颅 - 显示头颅所属玩家名称。
+- 陷阱箱 - 显示为普通箱子。
+- 细雪 - 显示为普通雪块。
+- 可疑的沙子/沙砾 - 显示为普通沙子/沙砾。
+- 其他内容 - 显示船，末影水晶，盔甲架等更多内容。
+
+##  [鼠标手势Mouse Tweaks](https://www.mcmod.cn/class/1162.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13), [文件覆盖](https://www.mcmod.cn/modlist.html?api=7)
+- 运行环境: 客户端需装, 服务端无效
+
+## [IPN一键背包整理](https://www.mcmod.cn/class/4104.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[Fabric Language Kotlin](https://www.mcmod.cn/class/2126.html)
+
+R+C打开配置菜单
+
+## [Quick Shulker](https://www.mcmod.cn/class/4322.html)
+
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2)
+- 运行环境: 客户端需装, 服务端需装
+
+Quick Shulker 允许你在不放下[潜影盒](https://www.mcmod.cn/item/473601.html)（1.1.13 后还包括[末影箱](https://www.mcmod.cn/item/51.html)和[工作台](https://www.mcmod.cn/item/52.html)）的情况下，按下一个按钮实现快速打开。
+
+Quick Shulker 有多种可配置的打开方法，所有这些你都可以启用/禁用如图所示，从上至下为：
+
+- 在拿着物品时按下绑定键；
+- 在拿着物品时右键单击；
+- 当鼠标悬停在物品栏中的物品上时按下绑定键；
+- 当鼠标悬停在物品栏中的物品上右键单击该物品。
+
+## [[IMB]输入法冲突修复IMBlocker](https://www.mcmod.cn/class/3358.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端无效
+
+## [[JECh]通用拼音搜索Just Enough Characters](https://www.mcmod.cn/class/840.html)
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运行环境: 客户端需装, 服务端无效
+
+这个模组修改了一些模组进行文本匹配的方式，现在你可以直接用拼音搜索（全拼或者声母或者混合输入）。
+
+与此同时，模组会尽量保持原来模组的其它特性不受影响，包括英文搜索。
+
+# 地毯四件套
 
 ### [Carpet地毯](https://www.mcmod.cn/class/2361.html)
 
@@ -221,130 +304,106 @@ categories: 游戏
 
 添加了有关假人的一些地毯规则，如打开假人背包，假人自动切换工具、自动补货，假人钓鱼等
 
-## [Quick Shulker](https://www.mcmod.cn/class/4322.html)
+# 优化类
 
-- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2)
-- 运行环境: 客户端需装, 服务端需装
-
-Quick Shulker 允许你在不放下[潜影盒](https://www.mcmod.cn/item/473601.html)（1.1.13 后还包括[末影箱](https://www.mcmod.cn/item/51.html)和[工作台](https://www.mcmod.cn/item/52.html)）的情况下，按下一个按钮实现快速打开。
-
-Quick Shulker 有多种可配置的打开方法，所有这些你都可以启用/禁用如图所示，从上至下为：
-
-- 在拿着物品时按下绑定键；
-- 在拿着物品时右键单击；
-- 当鼠标悬停在物品栏中的物品上时按下绑定键；
-- 当鼠标悬停在物品栏中的物品上右键单击该物品。
-
-## 优化类
-
-### [钠Sodium](https://www.mcmod.cn/class/2785.html)
+## [钠Sodium](https://www.mcmod.cn/class/2785.html)
 
 - 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
 - 运行环境: 客户端需装, 服务端无效
 
-### [Iris](https://www.mcmod.cn/class/3697.html)
+Sodium 是适用于 Minecraft 1.16+ 客户端的免费的强大渲染引擎暨优化模组，它在修复一些图形问题的同时大大提高了渲染性能。与其他以渲染为重点的模组相比，它与 Fabric 的模组生态系统具有广泛的兼容性，且不会影响游戏的画面，让你体验到原汁原味的方块游戏。
+
+如果你原本使用 [[OF\] 高清修复 (OptiFine)](https://www.mcmod.cn/class/36.html) 来优化 Minecraft，Sodium 通常可以提供进一步的改善，但你将缺失部分功能（如缩放、动态光源等），请点击[此处](javascript:void(0);)查看替换功能列表。若想加载光影，你可以使用 [Iris Shaders](https://www.mcmod.cn/class/3697.html) 。**注意，此模组与高清修复、\*Fabric Rendering API（在 0.6.0 及以上版本已兼容，0.6.0 以下版本可使用\*** [***铟\***](https://www.mcmod.cn/class/3413.html) ***来解决）\*、**[**Canvas 渲染器**](https://www.mcmod.cn/class/2862.html) **和** [**VulkanMod**](https://www.mcmod.cn/class/6626.html) **不兼容。**
+
+**由于上述灰字所说的原因，请不要将此模组 0.6.0 及以上版本与**[**铟**](https://www.mcmod.cn/class/3413.html)**一起使用****。**
+
+## [Iris](https://www.mcmod.cn/class/3697.html)
 
 - 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
 - 运行环境: 客户端需装, 服务端无效
 
 装了以上两个之后可以装光影
 
-## [苹果皮](https://www.mcmod.cn/class/744.html)
-
-- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
-- 运行环境: 客户端需装, 服务端可选
-
-一个更好的食物显示mod
-
-##  [鼠标手势Mouse Tweaks](https://www.mcmod.cn/class/1162.html)
-
-- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13), [文件覆盖](https://www.mcmod.cn/modlist.html?api=7)
-- 运行环境: 客户端需装, 服务端无效
-
-## [Jade玉](https://www.mcmod.cn/class/3482.html)
+## [锂Lithium](https://www.mcmod.cn/class/2292.html)
 
 - 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
 - 运行环境: 客户端可选, 服务端可选
+- 建议服务端客户端都装载
 
-1.16+ 的玉新增了更多的功能：
+优化内容：
 
-- 熔炉 - 显示材料，燃料与进度。
-- 唱片机 - 显示当前唱片。
-- 附魔 - 显示当前附魔台与书架附魔等级。
-- 生物信息 - 显示名称，生命值与护甲。
-- 刷怪笼 - 显示生成物。
-- 宠物 - 显示主人。
-- 村民信息 - 显示村民职业。
-- 物品容器 - 显示容器中存存储的物品（箱子、漏斗、末影箱等）。
-- 隐藏模组名 - 隐藏工具提示（Tooltips）中的 Mod 名称。（默认禁用）
-- 蜂箱 - 显示蜜蜂数量和“[honey_level](javascript:void(0);)”。
-- 盔甲架 - 显示其上的盔甲。
-- 鸡蛋 - 显示鸡还剩余多少时间会下蛋。
-- 命令方块 - 命令方块会显示当前命令行。
-- TNT - 显示它是否能[击打点燃](javascript:void(0);)。
-- 音符盒 - 显示音高和乐器。
-- 画 - 显示挂的画的名称。
-- 正确显示方块名 - 对于仙人掌盆栽，会显示“仙人掌盆栽”而不是错误的“仙人掌”。
-- 方块 - 显示方块坐标及相对坐标，距离朝向，采掘工具，注册名称与模组名称。
-- 命令方块 - 显示设置指令。
-- 红石信息 - 显示如比较器模式，红石强度等信息。
-- 头颅 - 显示头颅所属玩家名称。
-- 陷阱箱 - 显示为普通箱子。
-- 细雪 - 显示为普通雪块。
-- 可疑的沙子/沙砾 - 显示为普通沙子/沙砾。
-- 其他内容 - 显示船，末影水晶，盔甲架等更多内容。
+1. 物理优化：通过简单地减少长方体碰撞箱的分辨率复杂度，实体碰撞检测有了显著的进步。 同时，还使用一种更准确的算法来减少每个 tick 检查的区块数，尤其是在实体快速移动的情况下，优化效果显而易见；
+2. 生物 AI 优化：本模组在一些处理 AI 的任务中使用了基于事件的系统，以减少不断遍历世界变化所带来的 CPU 占用。生物的“大脑”也被优化了，在不同的 AI 任务之间选择时会比以前快很多；
+3. 世界生成优化：在原版的世界生成当中，许多计算都是不必要的，并且不会影响最终结果，这为 Lithium 提供了充分的机会来优化这一笔显著的性能开销；
+4. 区块加载优化：修改了方块着色板压缩（block palette compaction）中所使用的预生成结构（temporary data structures）以提高效率。当玩家在探索世界（生成新区块）时，TPS 下降更少，加载时间也有所改进。**锂**还对一些验证操作进行了批处理，以减少不必要的磁盘 I/O。***注意：如果安装了区块引擎重写优化 [井字棋（tic-tacs）](https://www.mcmod.cn/class/3408.html) ，该优化不会有任何作用，但这并不影响双方的兼容性；\***
+5. 刷怪塔优化：优化过的实体之间的碰撞处理会利用简单的碰撞箱，怪物成堆所带来的性能损耗显著降低。这大大降低了刷怪塔对服务器 TPS 的影响；
+6. 方块刻处理优化：该优化让方块刻处理的开销更少，使方块更新（生成区块后稳定下来时）和其它红石装置更快。游戏会确定方块是否按照更新队列的计划进行刻处理，该优化使其时间复杂度从 O(n) [n 在这里代表进行刻处理的方块数量] 降低到 O(1)，从而在刻处理大量方块时提供十分显著的速度提升；
+7. 爆炸优化：**锂**已为 TNT 和爆炸应用了相当多的优化，在不改变其行为的情况下减少了相关的行为所带来的卡顿。 在其中增益最显著的一项是光线追踪，已得到充分优化（原理：在同一路径上，多步发生的行为将响应于同一方块位置，从而快速复用上一步的结果）。 **锂**还利用了一种更快的位置跟踪算法，该算法可以避免许多不必要的分配（allocations）；
+8. 兴趣点优化：Minecraft 中的复杂生物 AI（主要是村民和掠夺者的）通常需要在世界中找到相关的兴趣点，以选择最合适的AI任务。在原版中，查询一个区块中的所有兴趣点需要通过大量的流代码进行 16 次单独检索。随着 Lithium 的出现，这个任务被简化为单次简单检索，使用更快（也很典型）的基于迭代器的方法，使查询性能提高 16-22 倍；
+9. 数据追踪器优化：用于追踪某些实体状态和属性的内部数据管理器经过优化，使用平面数组并避免高性能损耗的锁定，无论这些属性在一个游戏刻内何时被访问，这都能提供十分体面高效的性能提升；
+10. 红石优化：在方块更新后计算红石线的新充能等级很吃性能。该优化在不改变行为的情况下减少方块状态检查的次数，可将红石粉产生的滞后减少约 35%；
+11. ***…以及其他帮助 JVM 更好地优化代码的内部改进。\***
 
-## [FTBE FTB Essentials](https://www.mcmod.cn/class/3202.html)（这个已经更改为Essential commands)
+# MASA全家桶
 
-- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
-- 运行环境: 客户端需装, 服务端需装
-- 前置：[FTB Library / FTB GUI Library](https://www.mcmod.cn/class/3184.html) [Architetury API](https://www.mcmod.cn/class/3434.html)
+## [**Masa Gadget**](https://www.mcmod.cn/class/4203.html)
 
-添加了很多实用命令
-
-- /kickme-将自己踢出服务器
-- /trashcan-打开垃圾桶
-- /leaderboard-显示服务器排行榜，包括死亡次数、游戏时间、跳跃次数等
-- /recording-切换录制模式，用于流媒体播放者和YouTube视频制作者让其他人知道他们正在直播，会更改聊天和标签列表中的名字
-- /hat-将当前主手物品放在头盔插槽中，使其成为你的“帽子”
-- /nickname <名称...>-更改聊天中的昵称
-
-以下是作弊命令
-
-- /heal <玩家>-使玩家恢复全部生命值
-- /fly <玩家>-切换创造飞行模式
-- /god <玩家>-切换上帝模式（不会受到任何伤害，包括虚空伤害魔法伤害等）
-- /invsee <玩家>-允许查看和编辑其他玩家背包
-- /nickfor <玩家> <名称...>-更改聊天中其他玩家的昵称
-- /mute <玩家>-禁言玩家
-- /unmute <玩家>-取消禁言玩家
-- /teleport_last <玩家>-传送到最后一个已知的玩家位置
-
-以下是传送命令
-
-- /back-传送到先前的位置。可多次使用
-- /spawn-传送至出生点
-- /rtp-将你传送到世界上的随机位置，并尝试找到一个非海洋的，安全的着陆点
-- /home <家名称>-传送到家中
-- /sethome <家名称>-设置家
-- /delhome <家名称>-删除家
-- /listhomes [玩家]-列出玩家的所有的家 
-- /warp <地标名称>-传送到此地标
-- /setwarp <地标名称>-设置地标
-- /delwarp <地标名称>-删除地标
-- /listwarps-列出所有地标
-- /tpa <player>-请求传送到xxx玩家
-- /tpahere <player>-请求玩家传送到你这儿
-- /tpaccept <id>-接受请求（将在屏幕上显示一个按钮）
-- /tpadeny <id>-拒绝请求（将在屏幕上显示一个按钮）
-
-## [IPN一键背包整理](https://www.mcmod.cn/class/4104.html)
-
-- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
+- 运作方式: [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [NeoForge](https://www.mcmod.cn/modlist.html?api=13)
 - 运行环境: 客户端需装, 服务端无效
-- 前置：[Fabric Language Kotlin](https://www.mcmod.cn/class/2126.html)
 
-R+C打开配置菜单
+给litematic，tweakeroo，tweakermore，minihud添加了一些额外的功能
+
+\>3.0.0版本的需要魔法类库MagicLib作为前置
+
+默认使用**G+C**打开配置页面
+
+功能
+
+- **自动同步实体数据**
+
+  自动使用PCA同步协议来同步实体数据（如村民补货时间，僵尸村民转换时间，怪物是否消失）。
+
+  **同步实体数据**
+
+  使用PCA同步协议来同步实体数据（设置快捷键来控制）
+
+  **缓存容器数据**
+
+  再打开容器的时候会自动缓存容器数据到本地。
+
+- **渲染村民交易的第一本附魔书**
+
+  渲染村民交易的第一本附魔书，如果是满级附魔则会显示金色文本，同时还会显示出价格，绿色表示良商，白色表示中商，红色表示奸商。
+
+  **渲染村民交易补货冷却**
+
+  渲染距离村民下一次补货还需要多长时间。
+
+  **渲染僵尸村民转化时间**
+
+  渲染距离僵尸村民转化完成还需要多长时间。
+
+- **搜寻可刷怪的地方**
+
+  搜寻可刷怪的地方。需要在 [minihud](https://www.mcmod.cn/class/2311.html) 中设置 怪物立刻消失范围球体 ，亮度检查取决于minihud中的lightLevelThresholdSafe设置。
+
+  **搜寻刷怪点黑名单**
+
+  在黑名单中的方块会跳过搜索。
+
+- **修复精确放置协议**
+
+  Litematica本身的精准放置协议实现的有问题，无法正确识别部分物品的方向，现已修复。修复后可以在服务器中使用轻松放置来摆放中继器，活塞，侦测器，楼梯等方块。
+
+- **容器预览**
+
+## [MH]迷你HUD MiniHUD
+
+- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [Rift](https://www.mcmod.cn/modlist.html?api=3), [LiteLoader](https://www.mcmod.cn/modlist.html?api=4)
+- 运行环境: 客户端需装, 服务端无效
+- 前置：[[MaLiLib]Masa's Litemod Library](https://www.mcmod.cn/class/2298.html)
+
+**H+C打开配置界面**
 
 ## [物品滚轮Item Scroller](https://www.mcmod.cn/class/1529.html)
 
@@ -372,13 +431,13 @@ R+C打开配置菜单
 
 同时，喷射合成也是基于这个mod
 
-## [MH]迷你HUD MiniHUD
+进行喷射合成的操作，你需要
 
-- 运作方式: [Forge](https://www.mcmod.cn/modlist.html?api=1), [Fabric](https://www.mcmod.cn/modlist.html?api=2), [Quilt](https://www.mcmod.cn/modlist.html?api=11), [Rift](https://www.mcmod.cn/modlist.html?api=3), [LiteLoader](https://www.mcmod.cn/modlist.html?api=4)
-- 运行环境: 客户端需装, 服务端无效
-- 前置：[[MaLiLib]Masa's Litemod Library](https://www.mcmod.cn/class/2298.html)
+```
 
-**H+C打开配置界面**
+```
+
+
 
 ## Tweakeroo
 
@@ -396,13 +455,69 @@ R+C打开配置菜单
 
 **K+C打开配置界面**
 
+## [投影Litematica](https://www.mcmod.cn/class/2261.html)
+
 # 一些实用的资源包（建议全部装载）
 
 ## [MASA全家桶汉化包](https://space.bilibili.com/13205801?spm_id_from=333.337.0.0)
 
+提供了MASA系列的中文汉化支持
+
 ## [Clean Glass & Clear Tinted Glass](https://www.curseforge.com/minecraft/texture-packs/clean-glass-tinted-glass)
 
+清洁玻璃
+
 ## [XeKr的红石显示](https://www.curseforge.com/minecraft/texture-packs/xekr-redstone-display)
+
+更好的红石显示
+
+## [Motschen's Better Leaves](https://modrinth.com/resourcepack/better-leaves)
+
+Better Leaves adds additional layers to leaf blocks, making them appear more bushy, dense and natural.
+
+## [矿透Xray Ultimate](https://www.curseforge.com/minecraft/texture-packs/xray-ultimate-1-11-compatible)
+
+Better than Xray mods!
+
+X-ray pack for all those who need it. Ores and mineral blocks are shamelessly highlighted as shown in the pictures.
+
+Monster blocks (silver fish blocks) have a red square on them. The texture is derived from the redstone block so that it will be compatible with most packs.
+
+## [Stay True](https://www.curseforge.com/minecraft/texture-packs/stay-true)
+
+Stay True is a visual remaster of the current default texturepack, I tweaked and changed a lot of current textures that I thought needed it. The changes are not drastic and still fit perfectly with the current color scheme and textures of the default texture pack, many of these changes will add a lot more diversity, removing repetitiveness which in turn results in a more realistic and overall nicer appearance. (in my opinion :P)
+
+一个更加真实的材质包，包括了Better leaves，推荐
+
+## [Fresh Animations](https://www.curseforge.com/minecraft/texture-packs/fresh-animations)
+
+提供了更多的生物动作与生物表情，需要一些前置（建议去PCL查看）
+
+curseforge上的这个页面有点问题，
+
+# 辅助类
+
+## [Baritone](https://www.mcmod.cn/class/3136.html)
+
+作弊性质
+
+[github文档](https://github.com/cabaletta/baritone/blob/1.19.4/USAGE.md)
+
+[mcmod上的教程](https://www.mcmod.cn/post/3666.html)
+
+## [Meteor client](https://github.com/MeteorDevelopment/meteor-client)
+
+这位更是重量级，目前只提供最新版本，旧的版本需要用gradlew在本地构建mod
+
+绝对的外挂这是
+
+# 光影类
+
+## [Complementary Shaders](https://www.complementary.dev/shaders/)
+
+## [iterationt3.2.0](https://www.curseforge.com/minecraft/shaders/iterationt-3-2-0)
+
+
 
 # 服务端的优化处理
 
@@ -413,6 +528,8 @@ TPS：20正常
 MSPT $\times$ TPS $\leq$ 1000，说明当时服务器处于正常状态
 
 实体卡顿远大于红石器件卡顿，一个村民相当于一百个无锁漏斗
+
+闪烁的红石粉与红石火把会非常卡，相当于60多个中继器
 
 # 如何开始？一些基础的设置
 
