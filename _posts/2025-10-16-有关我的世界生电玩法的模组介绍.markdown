@@ -115,7 +115,15 @@ Quick Shulker 有多种可配置的打开方法，所有这些你都可以启用
 
 与此同时，模组会尽量保持原来模组的其它特性不受影响，包括英文搜索。
 
-# 地毯四件套
+# 地毯N件套
+
+**carpet及其addition的有关操作基本上均依赖于游戏内的`\carpet`根命令而不是配置文件。**
+
+**carpet及其addition的有关操作基本上均依赖于游戏内的`\carpet`根命令而不是配置文件。**
+
+**carpet及其addition的有关操作基本上均依赖于游戏内的`\carpet`根命令而不是配置文件。**
+
+carpet类如果不进行操作不会对原版产生任何影响
 
 ### [Carpet地毯](https://www.mcmod.cn/class/2361.html)
 
@@ -303,6 +311,8 @@ Quick Shulker 有多种可配置的打开方法，所有这些你都可以启用
 - 运行环境: 客户端可选, 服务端需装
 
 添加了有关假人的一些地毯规则，如打开假人背包，假人自动切换工具、自动补货，假人钓鱼等
+
+### [Carpet AMS addition](https://carpet.mcams.club/Rules/)
 
 # 优化类
 
@@ -494,6 +504,8 @@ Stay True is a visual remaster of the current default texturepack, I tweaked and
 提供了更多的生物动作与生物表情，需要一些前置（建议去PCL查看）
 
 curseforge上的这个页面有点问题，
+
+
 
 # 辅助类
 

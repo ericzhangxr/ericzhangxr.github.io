@@ -36,6 +36,11 @@ BUT when you facing a linux system, such as a ECS, or a cloud service, it is imp
 
   return the current user's name
 
+- get more information of a specific user
+  ```shell
+  id <username>
+  ```
+
 - add a user, with the propose if human using
   ```shell
   sudo adduser <name>
@@ -50,11 +55,146 @@ BUT when you facing a linux system, such as a ECS, or a cloud service, it is imp
 
   this command will create a system user, and no password need, if you need a specific user to run your Minecraft Server, then make a new user instead of use root is a best practice
 
-- change the user from root to the user you created
+- if a system user will be activated, before you change user, some permission should be distributed to this system user, decided by the program, progress you want to run by the system user
+
   ```shell
+  ls -l #check current file information
+  sudo chown <username>:<username> /path/to/file #for a specific file
+  sudo chown -R <username>:<username> /path/to/directory #for a entire directory
   ```
 
-  
+- change the user from root to the user you created
+
+  ```shell
+  su - <name>
+  ```
+
+## Screen management
+
+What is a screen?
+
+Generally, screen is a Terminal Multiplexer, if you want to run a process in you linux server, it will break when you stop you SSH connection. But the process run by a specific screen will not break, in another way to say that use different screen to manage the progress is a best practice.
+
+Create a screen
+
+```shell
+screen -S <name>
+```
+
+Back to your main shell window
+
+```shell
+#Ctrl+a then press d
+```
+
+Check the screen you created
+
+```shell
+screen -ls
+```
+
+Reattach the screen you created
+
+```shell
+screen -r <name>
+```
+
+Stop the current screen(typically screen that you created)
+
+```shell
+exit #moderate way
+screen -X -S <screen_id> quit #forced quit
+```
+
+If you use `screen -ls` find that one specific screen is activated, i.e. attached but no information of the specific screen generated. you should use
+
+```shell
+screen -d <ID or name>
+```
+
+to detach the screen then activated it again
+
+You can use a screen named `mc` to run your Minecraft server
+
+## How to manage Python in your linux server
+
+Before you manage Python, you need to check some basic information or settings in your servers, which is important if you not sure your server have or not some python version or environment
+
+First, as best practice as your windows computer , A virtual environment should be created before you intend to run some progress
+
+### System python V.S. User_installed Python
+
+System Python refers to the Python interpreter that the Linux operating system installs and relies on by default.
+
+**DONT DO ANYTHING WITH REGARD TO SYSTEM PYTHON AND DONT DO ANY PIP IN THE DEFAULT SYSTEM ENVIRONMETN**
+
+User_installed Python is the Python interpreter you install independently for personal development or specific project needs.
+
+**USUALLY INSTALLED IN A VIRTUAL ENVIRONMENT**
+
+```shell
+python --version #check your python edition
+python3 --version #check your python3 edition if distinguished
+which python #check your path to python, return to a path
+
+ls -l /usr/bin/python3.10 #check the detailed information of your python
+```
+
+### Virtual environment related
+
+There are two way to create a virtual environment
+
+| Feature              | pipx                                                         | pip + venv                                                   |
+| :------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| **Purpose**          | Specifically for installing and running CLI tools.           | For installing libraries/dependencies for projects.          |
+| **Env Management**   | Automatically creates and manages an isolated virtual environment for each application. | Requires manual creation of virtual environment (`python -m venv`) and activation. |
+| **Install Location** | Centralized in `~/.local/pipx/venvs/`, with application binaries symlinked to `~/.local/bin/`. | Environment files are typically in the project directory, binaries in the environment's `bin/` directory. |
+
+I recommend to use pipx [[https://pipx.pypa.io](https://pipx.pypa.io/)] to manage your program and virtual environment
+
+Install in Linux with Ubuntu 23.04 or above
+
+```shell
+sudo apt update
+sudo apt install pipx
+pipx ensurepath
+sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
+```
+
+Initialize pipx 
+
+```shell
+pipx list
+```
+
+Install mcdreforeg with pipx
+
+```shell
+pipx install mcdreforged
+```
+
+Upgrade if feasible
+
+```shell
+pipx upgrade mcdreforged
+```
+
+Official document of mcdreforged https://docs.mcdreforged.com/zh-cn/latest/index.html
+
+## Some other common command
+
+```shell
+pwd #show current working directory
+cd /path/to/directory#change you working directory
+cd .. #back to the parent directory
+ls #show the current directory contains
+mkdir #make a new directory in the current working directory
+cp #copy
+rm #delete
+mv #move
+```
+
+
 
 
 
