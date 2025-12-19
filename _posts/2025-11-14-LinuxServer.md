@@ -58,7 +58,7 @@ BUT when you facing a linux system, such as a ECS, or a cloud service, it is imp
 - if a system user will be activated, before you change user, some permission should be distributed to this system user, decided by the program, progress you want to run by the system user
 
   ```shell
-  ls -l #check current file information
+  ls -la #check current file information
   sudo chown <username>:<username> /path/to/file #for a specific file
   sudo chown -R <username>:<username> /path/to/directory #for a entire directory
   ```
@@ -68,6 +68,16 @@ BUT when you facing a linux system, such as a ECS, or a cloud service, it is imp
   ```shell
   su - <name>
   ```
+
+### If you forget you password of system user
+
+First, make sure you are **root**
+
+```shell
+passwd <username>
+```
+
+then just type new password in the shell
 
 ## Screen management
 
@@ -180,6 +190,48 @@ pipx upgrade mcdreforged
 ```
 
 Official document of mcdreforged https://docs.mcdreforged.com/zh-cn/latest/index.html
+
+## Analysis of the status
+
+when the server is running, you can use
+
+```shell
+top
+```
+
+to analysis the status of the server. the following is the detailed information of the **top** interface
+
+| Field   | Meaning         | Explanation                                                  |
+| ------- | --------------- | ------------------------------------------------------------ |
+| PID     | Process ID      | Unique identifier for the process.                           |
+| USER    | User            | User who owns/runs the process.                              |
+| PR      | Priority        | The priority of the process for kernel scheduling.           |
+| NI      | Nice Value      | Static priority of the process (-20 highest, +19 lowest). PR is calculated based on NI. |
+| VIRT    | Virtual Memory  | Total virtual memory used by the process (code, data, shared libraries, etc.). |
+| RES     | Resident Memory | Non-swapped physical memory used by the process. (Key Metric) |
+| SHR     | Shared Memory   | Amount of memory shared with other processes.                |
+| S       | Status          | Current process state (R Running, S Sleeping, D Uninterruptible Sleep, Z Zombie, T Stopped). |
+| %CPU    | CPU Usage       | Percentage of CPU time used during the sampling period. (Key Metric) |
+| %MEM    | Memory Usage    | Percentage of physical RAM used by the process.              |
+| TIME+   | CPU Time        | Total CPU time used since process start (precision: 1/100 second). |
+| COMMAND | Command/Name    | Command line or program name that started the process.       |
+
+Quit
+
+- type `q` on the keyboard
+- type `ctrl+c`
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Some other common command
 
