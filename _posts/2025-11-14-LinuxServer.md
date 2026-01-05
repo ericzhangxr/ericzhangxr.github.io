@@ -126,6 +126,22 @@ to detach the screen then activated it again
 
 You can use a screen named `mc` to run your Minecraft server
 
+**For a stopping process of mcdr but IT CANT BE STOPPED**
+
+```shell
+screen -S mc -X quit
+#Quit the screen
+ps -ef | grep java
+#check of java process
+#if return 
+
+#mcserver 2490910 2490163  0 23:59 pts/0    00:00:00 grep --color=auto java
+
+#this is the search command itself, this return means that no other java process
+```
+
+
+
 ## How to manage Python in your linux server
 
 Before you manage Python, you need to check some basic information or settings in your servers, which is important if you not sure your server have or not some python version or environment

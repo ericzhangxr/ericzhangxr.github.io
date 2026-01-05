@@ -74,9 +74,23 @@ conda create -n your_env_name --no-default-packages python=<version>
 conda deactivate #exit current env
 ```
 
+### 4.If you encountered some network problem
 
+we only introduce the solution method under a VPN environment
 
+```shell
+echo %http_proxy%
+echo %https_proxy%
+#you can find your proxy of http link, if return %----%, this is mean you are not set a proxy
+set set http_proxy=http://127.0.0.1:<your_vpn_channel>
+#my default channel is 7897
+#then you can pip
+```
 
+```
+conda activate d2l-zh
+pip install jupyter d2l torch torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+```
 
 
 
