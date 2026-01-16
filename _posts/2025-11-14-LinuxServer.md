@@ -79,6 +79,14 @@ passwd <username>
 
 then just type new password in the shell
 
+### Other commands
+
+```shell
+exit #logout current user, back to the root user
+```
+
+
+
 ## Screen management
 
 What is a screen?
@@ -237,17 +245,52 @@ Quit
 - type `q` on the keyboard
 - type `ctrl+c`
 
+## Linux Directory Structure
 
+```shell
+. #current directory
+.. #parent directory
+```
 
+wildcards: `*`
 
+```shell
+example_file/* #means all child folder and files under the example_file
+*.jar #means all files ending with .jar
+```
 
+**mv**
 
+```shell
+mv [options] source target
+mv a.txt /path/to/dir #move a file to target
+mv old.txt new.txx #rename
+mv a.txt b.txt c.txt /path/to/dir #move a batch of files
+mv dirA dirB/ #dirA becomes dirB/dirA
+mv A/* B/ #move all child files in A into directory B
 
+```
 
+| options | explanation             |
+| ------- | ----------------------- |
+| `-i`    | prompt before overwrite |
+| `-f`    | force overwrite         |
+| `-v`    | verbose output          |
 
+**unzip**
 
+extracts `.zip` archives, only works for ZIP files
 
+```shell
+sudo apt install unzip #install
 
+#Basic Syntax
+unzip [options] archive.zip
+
+unzip file.zip -d /path/to/dir #unzip a file to target directory
+unzip -o ~ #overwrite existing files
+unzip -i ~ #prompt before overwrite, a more safe way
+```
 
 ## Some other common command
 
@@ -260,6 +303,8 @@ mkdir #make a new directory in the current working directory
 cp #copy
 rm #delete
 mv #move
+zip -r achieve.zip target_folder/ #zip a folder with all its child file
+touch test.txt #create a file named text end with .txt
 ```
 
 
