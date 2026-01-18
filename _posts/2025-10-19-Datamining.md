@@ -105,3 +105,108 @@ $$
 我们的目标是confidence($A_1 B_1\rightarrow E_2$) = $\frac{support(A_1 B_1 E_2)}{support(A_1 B_1)}$大于我的minconf 即可
 
 通过这种标号方式，可以对新的表进行对应的操作
+
+# AB-TEST
+
+very simple, just like the check experiment in medicine
+
+
+
+## steps of abtest
+
+1.purpose of the test
+
+2.indicator we focus
+
+- Core metric: the indicator we want to enhance
+- Guardrail metric: the indicator we should **not** sacrifice
+
+3.hypothesis
+
+4.test subjects
+
+5.**test**
+
+6.verification
+
+7.evaluation and iteration
+
+## TEST
+
+### DEFINATION
+
+**Significance Level, $\alpha$**
+
+ a result at least as "extreme" would be very infrequent if the null hypothesis were true.
+
+probability of type I error: when the null hypothesis is true, probability of our experiment appear to REJECT THE NULL HYPOTHESIS
+
+is, reguarly set to be 0.05
+
+**P-VALUE**
+
+Academic Definition: The probability of obtaining the current observed statistic (or an even more extreme one) under the assumption that the null hypothesis ($H_0$) is true.
+
+p-value（英语：p - value）为假设检验中，假设零假设为真时，观测到至少与实际观测样本一样极端的样本的概率。
+
+if  P-value is less than Significance level, i.e., $P<\alpha$, thus we think the outcome is statistically significant, the null hypothesis should be rejected
+
+**Standard Error**
+
+标准误全称：[样本均值](https://zhida.zhihu.com/search?content_id=167748946&content_type=Article&match_order=1&q=样本均值&zhida_source=entity)的标准误(Standard Error for the Sample Mean),顾名思义，标准误是用于衡量样本均值和[总体均值](https://zhida.zhihu.com/search?content_id=167748946&content_type=Article&match_order=1&q=总体均值&zhida_source=entity)的差距。
+
+- **标准差 (Standard Deviation, $\sigma$)**：衡量**单个数据点**离散程度。（这一届考生的分数波动大不大？）
+
+- **标准误差 (Standard Error, SE)**：衡量**抽样结果**的可靠程度。（如果我反复抽样 1000 次，算出 1000 个平均分，这 1000 个平均分的波动大不大？）
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+
+**Confidence Interval**
+
+$$CI = \bar{x} \pm Z \times \frac{s}{\sqrt{n}}$$
+
+is another perspective of P-VALUE, essentially, they are same method in judgement
+
+
+
+### HOW TO DETERMINE THE SAMPLE SIZE OF THE TEST?
+
+
+
+
+
+## EXAMPLE OF AB-TEST
+
+1. recommendation
+2. trade off between revenue and retention
+3. UI
+4. Growth Team's recall strategy
+5. Technically
+
+## AB-TEST DIFFERENT DISTRIBUTIONS
+
+|                     Assumed distribution                     |                         Example case                         |                        Standard test                         |                       Alternative test                       |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| [Gaussian](https://en.wikipedia.org/wiki/Normal_distribution) | [Average revenue per user](https://en.wikipedia.org/wiki/Average_revenue_per_user) | [Welch's *t*-test](https://en.wikipedia.org/wiki/Welch's_t-test) (Unpaired *t*-test) | [Student's *t*-test](https://en.wikipedia.org/wiki/Student's_t-test) |
+| [Binomial](https://en.wikipedia.org/wiki/Binomial_distribution) | [Click-through rate](https://en.wikipedia.org/wiki/Click-through_rate) | [Fisher's exact test](https://en.wikipedia.org/wiki/Fisher's_exact_test) | [Barnard's test](https://en.wikipedia.org/wiki/Barnard's_test) |
+| [Poisson](https://en.wikipedia.org/wiki/Poisson_distribution) |                 Transactions per paying user                 | *E*-test[[9\]](https://en.wikipedia.org/wiki/A/B_testing#cite_note-9) |                           *C*-test                           |
+| [Multinomial](https://en.wikipedia.org/wiki/Multinomial_distribution) |               Number of each product purchased               | [Chi-squared test](https://en.wikipedia.org/wiki/Chi-squared_test) |       [*G*-test](https://en.wikipedia.org/wiki/G-test)       |
+|                           Unknown                            |                                                              | [Mann–Whitney *U* test](https://en.wikipedia.org/wiki/Mann–Whitney_U_test) | [Gibbs sampling](https://en.wikipedia.org/wiki/Gibbs_sampling) |
+
+Student's t-test: i.i.d, the Population is Gaussian Distribution, homoschedasticity.
+
+Welch's t-test does not assume homoschedasticity 
+
+Fisher's exact test: based on Hypergeoetric Dristribution, deal with the contingent tablel
+
+$$P(X=a) = \frac{\binom{a+b}{a} \times \binom{c+d}{c}}{\binom{n}{a+c}}$$
+
+**Fisher 的逻辑 (Conditional)**：它假设表格的**行合计 (Row Totals)** 和 **列合计 (Column Totals)** 都是**固定不变**的（Fixed Margins）。
+
+**Barnard 的逻辑 (Unconditional)**：它认为在现实的 A/B 测试中，**只有一边的合计是固定的**（通常是样本量），而另一边的合计（结果分布）是随机的。
+
+Gaussian v.s. Poisson
+
+- Gaussian: mean-based indicators, continuous variables, such as ARPU, AOV, sojourn time
+- Possion: Frequenct in a unit time, such as Transactions per paying user
+
