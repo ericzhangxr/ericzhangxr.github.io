@@ -210,3 +210,25 @@ Gaussian v.s. Poisson
 - Gaussian: mean-based indicators, continuous variables, such as ARPU, AOV, sojourn time
 - Possion: Frequenct in a unit time, such as Transactions per paying user
 
+# 分类问题
+
+**ID3（Iterative Dichotomiser 3）**
+
+自顶向下的递归方式，在决策树的每一个节点上，选择一个“最优”属性将数据集进行分裂，直到数据集都被正确分类或没有属性可选为止。
+
+熵 ($H(S)$)：如果一个集合 $S$ 中的样本越杂乱（例如一半是正类，一半是负类），熵就越高；如果样本越纯（例如全是正类），熵就越低（为0）。
+
+公式为：
+
+$$H(S) = - \sum_{i=1}^{c} p_i \log_2 p_i$$
+
+其中，$p_i$ 是第 $i$ 类样本在集合 $S$ 中的比例，$c$ 是类别数量。
+
+信息增益 ($Gain(S, A)$)：表示当我们知道了属性 $A$ 的值后，数据集 $S$ 的熵减少了多少（即不确定性减少了多少）。
+
+公式为：
+
+$$Gain(S, A) = H(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} H(S_v)$$
+
+最大化这个值，选择的$A$，就是第一个分裂属性
+
