@@ -232,3 +232,21 @@ $$Gain(S, A) = H(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} H(S_v)$$
 
 最大化这个值，选择的$A$，就是第一个分裂属性
 
+# ROC curve
+
+- **横轴 (X轴)**：**FPR (False Positive Rate)**
+  - $FPR = \frac{FP}{N}$
+  - 含义：**误报率**。在所有负样本（0）中，有多少被错误地判为了正（1）
+- **纵轴 (Y轴)**：**TPR (True Positive Rate)**
+  - $TPR = \frac{TP}{P}$
+  - 含义：**召回率 (Recall)** / **统计功效 (Power)**。在所有正样本（1）中，有多少被正确地判为了正（1）
+
+- 为什么是个曲线：模型输出是probability, bu we should give a threshold to judge under what probability we can say one sample is positive or negative, if the threshold is 0, thus all of them is predicted positive, the point on the ROC curve is (1,1), if the threshold is 1, thus all of the predicted outcome is negative, on the curve is (0,0), the depict of the ROC curve can be viewed as a process that we continuously changing the threshold from 1 to 0.
+
+- ROC 的本质是评估**排序能力**。
+
+  **完美凸起 (AUC=1.0)** 意味着：无论你怎么选阈值，模型给**所有**正样本的打分，都高于**任何**负样本的打分。
+
+  如果曲线很凸，说明模型在大概率上能保证：**随机抽一个坏人，他的预测分值 > 随机抽一个好人的预测分值。**
+
+- **坐标**：横轴是**代价** (误报率)，纵轴是**收益** (召回率)。
