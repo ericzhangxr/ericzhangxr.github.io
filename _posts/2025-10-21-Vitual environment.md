@@ -74,7 +74,7 @@ conda create -n your_env_name --no-default-packages python=<version>
 conda deactivate #exit current env
 ```
 
-### 4.If you encountered some network problem
+## 4.If you encountered some network problem
 
 we only introduce the solution method under a VPN environment
 
@@ -92,6 +92,183 @@ conda activate d2l-zh
 pip install jupyter d2l torch torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
 ```
 
+## 5.Check out the information of virtual environment
+
+All virtual environments you created
+
+```shell
+conda env list
+```
+
+Check out the basic information of current VE
+
+```shell
+conda info
+```
+
+list the package you installed in the current VE
+
+```shell
+conda list
+```
+
+# Jupyter notebook venv
+
+方法一：通过命令行注册内核（推荐）
+
+这是最常用的方法，只需在终端执行几条命令即可：
+
+### 步骤1：激活你的虚拟环境
+
+在命令提示符中，确保你的虚拟环境已激活（看到`(.venv)`前缀）：
+
+bash
+
+```
+# 如果你已经在这个环境中，直接进行下一步
+# 如果没有，先激活：
+.venv\Scripts\activate
+```
+
+### 步骤2：安装ipykernel
+
+在激活的虚拟环境中安装ipykernel包：
+
+bash
+
+```
+pip install ipykernel
+```
+
+### 步骤3：将虚拟环境注册为Jupyter内核
+
+bash
+
+```
+python -m ipykernel install --user --name=你的环境名 --display-name="你想显示的名称"
+```
+
+例如，对于你的项目：
+
+bash
+
+```
+python -m ipykernel install --user --name=.venv --display-name="Python (.venv)"
+```
+
+参数说明：
+
+- `--name`：Jupyter内部使用的名称（通常用环境名）
+- `--display-name`：在Jupyter菜单中显示的名称（可以自定义，支持中文）
+- `--user`：为当前用户安装（避免权限问题）
+
+### 步骤4：启动Jupyter并选择内核
+
+bash
+
+```
+jupyter notebook
+```
+
+在打开的页面中，点击右上角的"New"按钮，你应该能看到刚刚添加的"Python (.venv)"选项。如果已有打开的笔记本，可以通过"Kernel" → "Change Kernel"来切换。
+
+**其实你也可以在Anaconda prompt中创建venv，pip packages and then jupyter notebook initialize**
+
+# Anaconda+Jupyter notebook
+
+#### 第一步：创建并激活Conda虚拟环境
+
+首先，打开你的终端（或Anaconda Prompt），使用以下命令创建一个新的虚拟环境。你可以根据需要修改环境名称（这里是 `myenv`）和Python版本（这里是3.9）。
+
+bash
+
+```
+# 创建一个名为 myenv，Python版本为3.9的新环境
+conda create -n myenv python=3.9
+```
 
 
- 
+
+命令执行后，conda会解析需要安装的包，并询问你是否继续。输入 `y` 并按回车确认。
+
+环境创建完成后，使用以下命令激活它：
+
+bash
+
+```
+# 激活名为 myenv 的环境
+conda activate myenv
+```
+
+
+
+激活成功后，你的终端提示符前会出现 `(myenv)` 字样，这表明你已经在该虚拟环境中了。
+
+#### 第二步：在虚拟环境中安装Jupyter并注册内核
+
+这是最关键的一步，它能让你的Jupyter Notebook识别并使用这个新创建的虚拟环境。
+
+1. **安装`ipykernel`包**：在已激活的虚拟环境中，安装`ipykernel`。这个包是Python环境与Jupyter之间的“桥梁”。
+
+   bash
+
+   ```
+   # 在 myenv 环境中安装 ipykernel
+   conda install ipykernel
+   ```
+
+   
+
+2. **将虚拟环境注册为Jupyter内核**：执行以下命令，将当前虚拟环境注册为一个Jupyter内核。`--display-name` 后面的名字就是将来在Jupyter界面中看到的名字，可以自定义。
+
+   bash
+
+   ```
+   # 注册内核，在Jupyter中显示为“Python (myenv)”
+   python -m ipykernel install --user --name=myenv --display-name "Python (myenv)"
+   ```
+
+   
+
+#### 第三步：启动Jupyter Notebook
+
+完成注册后，**先退出当前虚拟环境，回到你的基础（base）环境**，然后再启动Jupyter Notebook。这样做可以确保Jupyter能够读取到所有已注册的内核。
+
+bash
+
+```
+# 1. 退出虚拟环境，回到base环境
+conda deactivate
+
+# 2. 启动Jupyter Notebook
+jupyter notebook
+```
+
+
+
+命令执行后，Jupyter Notebook会在你的默认浏览器中自动打开。
+
+### 🔍 验证与使用
+
+在Jupyter的文件列表页面，点击右上角的“New”按钮，你应该能在下拉菜单中看到你刚刚创建的 `Python (myenv)` 内核选项。
+
+选择该内核创建一个新的Notebook。为了确认一切正常，可以在单元格中输入以下代码并运行：
+
+python
+
+```
+import sys
+print(sys.executable)
+```
+
+
+
+如果输出的路径中包含你的环境名 `myenv`，那就说明大功告成，你的Notebook正在你专属的虚拟环境中运行了！
+
+### 💡 常见问题小贴士
+
+- **内核不显示？** 如果启动Jupyter后找不到你的内核，首先确认你是否在激活虚拟环境的状态下执行了 `python -m ipykernel install ...` 命令。另外，Jupyter需要在`base`环境（或安装了Jupyter本身的环境）下启动才能读取到所有用户级别的内核。
+- **想换个名字或删除内核？** 可以使用 `jupyter kernelspec list` 查看所有已安装的内核，然后用 `jupyter kernelspec remove <kernel_name>` 删除不需要的内核。
+
+# 如何在jupyter notebook中查看你是否启动了虚拟环境？
+

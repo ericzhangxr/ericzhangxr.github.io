@@ -210,6 +210,50 @@ Gaussian v.s. Poisson
 - Gaussian: mean-based indicators, continuous variables, such as ARPU, AOV, sojourn time
 - Possion: Frequenct in a unit time, such as Transactions per paying user
 
+辛普森悖论指的: 当我们在分析数据时，在每一个细分群体中看到的趋势（例如A优于B），在将这些群体合并后，趋势竟然消失甚至反转了（变成了B优于A）。
+
+辛普森悖论的核心机制：**加权平均的不平衡（Unequal Weighting）。**
+
+### 多重抽样的P-VALUE adjustment
+
+如果不修正，当你实验组够多时，你几乎**必然**会得到一个假的显著结果。这在业务上会导致你推全一个没用的策略，浪费资源。
+
+这个总体犯错的概率，我们称为 **FWER (Family-Wise Error Rate)**。
+
+针对 A/B/n 测试（一个对照组 Control，多个实验组 Treatment），常用的修正方法主要有三类，从“最严格”到“最实务”排列：
+
+#### 方法一：Bonferroni 校正（最简单、最保守）
+
+这是最著名的“铁锤”型方法。
+
+- **操作逻辑：** 既然我要做 $n$ 次检验，那我就把总的犯错机会平分给每一次。
+
+- **公式：**
+
+  $$\alpha_{\text{new}} = \frac{\alpha_{\text{original}}}{n}$$
+
+- **例子：**
+
+  如果你有 5 个实验组（A vs B, C, D, E, F），共 5 次比较。
+
+  原本的 $\alpha = 0.05$。
+
+  现在的判别标准变成：$p < 0.01$ 才算显著。
+
+- **缺点：** **过于保守**。它为了严防假阳性，极大地牺牲了 **Power（统计功效）**。可能会导致你“枪毙”掉很多本来有效的策略（假阴性升高）。
+
+#### 方法三：FDR (False Discovery Rate) - Benjamini-Hochberg 方法（互联网大厂首选）
+
+在工业界（尤其是实验组非常多，比如一次测 50 个颜色），我们往往不要求“完全不犯错”，而是要求“犯错的比例可控”。
+
+- **FWER (Bonferroni) 的目标：** 我绝不允许任何一个假阳性出现！
+- **FDR 的目标：** 我找出的 100 个策略里，允许混进去 5 个假的（FDR < 0.05），只要剩下 95 个是真的就行。
+- **操作逻辑：**
+  1. 排序 P 值。
+  2. **找到满足 $p_k \le \frac{k}{n} \alpha$ 的最大的 $k$。**
+  3. 前 $k$ 个实验组都算显著。
+- **优点：** **Power 很高**，非常适合探索性的业务实验。
+
 # 分类问题
 
 **ID3（Iterative Dichotomiser 3）**
