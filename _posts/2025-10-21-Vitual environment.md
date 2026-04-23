@@ -265,10 +265,42 @@ print(sys.executable)
 
 如果输出的路径中包含你的环境名 `myenv`，那就说明大功告成，你的Notebook正在你专属的虚拟环境中运行了！
 
-### 💡 常见问题小贴士
-
-- **内核不显示？** 如果启动Jupyter后找不到你的内核，首先确认你是否在激活虚拟环境的状态下执行了 `python -m ipykernel install ...` 命令。另外，Jupyter需要在`base`环境（或安装了Jupyter本身的环境）下启动才能读取到所有用户级别的内核。
-- **想换个名字或删除内核？** 可以使用 `jupyter kernelspec list` 查看所有已安装的内核，然后用 `jupyter kernelspec remove <kernel_name>` 删除不需要的内核。
+`conda install -n base -c conda-forge nb_conda_kernels`
 
 # 如何在jupyter notebook中查看你是否启动了虚拟环境？
+
+1. 使用`%pip list`查看当前环境下都有哪些包！！记得是用`% `而不是`！`作为命令行注册器
+
+2. ```shell
+   import sys
+   print(sys.executable)
+   # 输出路径查看是否是虚拟环境的路径
+   ```
+
+# 如果发现很多环境被安装在了C盘，如何处理？
+
+```shell
+# 修改环境的默认保存路径
+conda config --add envs_dirs D:\Anaconda\envs
+
+# 修改安装包缓存的默认保存路径
+conda config --add pkgs_dirs D:\Anaconda\pkgs
+```
+
+```shell
+conda create --prefix D:\Anaconda\envs\AKquantL --clone AKquantL
+# 克隆到一个新的文件夹，针对原来的这个环境
+```
+
+移除掉原有的环境
+
+```shell
+conda remove --prefix C:\Users\zhangeric\.conda\envs\AKquantL --all
+```
+
+并且将新的环境注册到ipynb
+
+```shell
+python -m ipykernel install --user --name 你的虚拟环境名称 --display-name "你想在Jupyter中看到的名字"
+```
 
