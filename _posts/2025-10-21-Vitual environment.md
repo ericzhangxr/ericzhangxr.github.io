@@ -52,8 +52,10 @@ categories: 教程
    ```shell
    conda install your_package
    pip install your_package
+   pip install your_package -i https://pypi.tuna.tsinghua.edu.cn/simple
+   #常用的一个镜像路径
    ```
-
+   
    第一句命令是使用conda安装一些包，第二个是使用python内置的pip安装包。所有的“import xx”都是包，python就是基于这一系列包而运行的。
 
 ## remind
@@ -124,7 +126,7 @@ conda list
 
 bash
 
-```
+```bash
 # 如果你已经在这个环境中，直接进行下一步
 # 如果没有，先激活：
 .venv\Scripts\activate
@@ -136,7 +138,7 @@ bash
 
 bash
 
-```
+```bash
 pip install ipykernel
 ```
 
@@ -144,19 +146,21 @@ pip install ipykernel
 
 bash
 
-```
-python -m ipykernel install --user --name=你的环境名 --display-name="你想显示的名称"
+```SHELL
+python -m ipykernel install --user --name 你的环境名 --display-name="你想显示的名称"
 ```
 
 例如，对于你的项目：
 
 bash
 
-```
-python -m ipykernel install --user --name=.venv --display-name="Python (.venv)"
+```SHELL
+#首先激活自己的虚拟环境
+conda activate CTA
+python -m ipykernel install --user --name CTA --display-name="CTA(zxr)"
 ```
 
-参数说明：
+参数说明：S
 
 - `--name`：Jupyter内部使用的名称（通常用环境名）
 - `--display-name`：在Jupyter菜单中显示的名称（可以自定义，支持中文）
@@ -173,80 +177,6 @@ jupyter notebook
 在打开的页面中，点击右上角的"New"按钮，你应该能看到刚刚添加的"Python (.venv)"选项。如果已有打开的笔记本，可以通过"Kernel" → "Change Kernel"来切换。
 
 **其实你也可以在Anaconda prompt中创建venv，pip packages and then jupyter notebook initialize**
-
-# Anaconda+Jupyter notebook
-
-#### 第一步：创建并激活Conda虚拟环境
-
-首先，打开你的终端（或Anaconda Prompt），使用以下命令创建一个新的虚拟环境。你可以根据需要修改环境名称（这里是 `myenv`）和Python版本（这里是3.9）。
-
-bash
-
-```
-# 创建一个名为 myenv，Python版本为3.9的新环境
-conda create -n myenv python=3.9
-```
-
-
-
-命令执行后，conda会解析需要安装的包，并询问你是否继续。输入 `y` 并按回车确认。
-
-环境创建完成后，使用以下命令激活它：
-
-bash
-
-```
-# 激活名为 myenv 的环境
-conda activate myenv
-```
-
-
-
-激活成功后，你的终端提示符前会出现 `(myenv)` 字样，这表明你已经在该虚拟环境中了。
-
-#### 第二步：在虚拟环境中安装Jupyter并注册内核
-
-这是最关键的一步，它能让你的Jupyter Notebook识别并使用这个新创建的虚拟环境。
-
-1. **安装`ipykernel`包**：在已激活的虚拟环境中，安装`ipykernel`。这个包是Python环境与Jupyter之间的“桥梁”。
-
-   bash
-
-   ```
-   # 在 myenv 环境中安装 ipykernel
-   conda install ipykernel
-   ```
-
-   
-
-2. **将虚拟环境注册为Jupyter内核**：执行以下命令，将当前虚拟环境注册为一个Jupyter内核。`--display-name` 后面的名字就是将来在Jupyter界面中看到的名字，可以自定义。
-
-   bash
-
-   ```
-   # 注册内核，在Jupyter中显示为“Python (myenv)”
-   python -m ipykernel install --user --name=myenv --display-name "Python (myenv)"
-   ```
-
-   
-
-#### 第三步：启动Jupyter Notebook
-
-完成注册后，**先退出当前虚拟环境，回到你的基础（base）环境**，然后再启动Jupyter Notebook。这样做可以确保Jupyter能够读取到所有已注册的内核。
-
-bash
-
-```
-# 1. 退出虚拟环境，回到base环境
-conda deactivate
-
-# 2. 启动Jupyter Notebook
-jupyter notebook
-```
-
-
-
-命令执行后，Jupyter Notebook会在你的默认浏览器中自动打开。
 
 ### 🔍 验证与使用
 
@@ -277,6 +207,14 @@ print(sys.executable)
    # 输出路径查看是否是虚拟环境的路径
    ```
 
+或者是在命令行中，输入
+
+```bash
+echo $CONDA_PREFIX
+```
+
+也可以输出当前环境所在的路径
+
 # 如果发现很多环境被安装在了C盘，如何处理？
 
 ```shell
@@ -302,5 +240,67 @@ conda remove --prefix C:\Users\zhangeric\.conda\envs\AKquantL --all
 
 ```shell
 python -m ipykernel install --user --name 你的虚拟环境名称 --display-name "你想在Jupyter中看到的名字"
+```
+
+# 如果想复制不同用户下的环境，应该如何操作？
+
+```shell
+# 在 CTA 环境中导出依赖列表
+conda activate /home/weixiao1/.conda/envs/CTA
+conda env export --no-builds > environment.yml
+```
+
+然后在自己的账号中根据这个文件进行重建
+
+```shell
+# 切换到你的账号 /home/zhangxurui
+conda env create --name CTA --file environment.yml
+```
+
+ps: 如果包太杂乱，部分包不能够成功下载构建，则参考下面这个不需要网络的打包办法
+
+# 如果网络不好使，怎么打包？
+
+```shell
+# 安装 conda-pack（如果还没安装的话）
+pip install conda-pack -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 将 CTA 环境打包到 /tmp 目录下
+conda pack -n CTA -o /tmp/CTA_env.tar.gz
+
+## 赋予读取权限
+#chmod 644 /tmp/CTA_env.tar.gz
+```
+
+然后在目标目录存放env的文件中新建文件夹
+
+```shell
+mkdir -p /home/other_user/.conda/envs/zxr_clone
+```
+
+解压缩
+
+```shell
+tar -xzf /tmp/zxr.tar.gz -C /home/other_user/.conda/envs/zxr_clone
+```
+
+激活
+
+```shell
+source /home/other_user/.conda/envs/zxr_clone/bin/activate
+
+# 4. 关键一步：运行 conda-unpack 修复环境内部的路径
+# （这一步会将原来属于 zhangxurui 的路径全部自动替换为 other_user 的新路径）
+conda-unpack
+```
+
+可以查看一下都有哪些包 `conda list`
+
+**重新将环境注册为ipykernel**
+
+# 如何复制一个已经存在的环境？
+
+```bash
+conda create --name $ENV_NAME --clone /home/huangshuang/.conda/envs/hs_my_env
 ```
 
