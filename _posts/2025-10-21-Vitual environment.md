@@ -29,6 +29,8 @@ categories: 教程
 
 3. 执行python命令
 
+如果是使用Miniconda, 只能从Anaconda Prompt这个terminal中进行管理
+
 ## 2.安装Conda虚拟环境
 
 1. 进入左下角Windows菜单图标，找到Anaconda3文件夹，以**管理员方式**打开Anaconda Prompt
@@ -144,17 +146,13 @@ pip install ipykernel
 
 ### 步骤3：将虚拟环境注册为Jupyter内核
 
-bash
-
-```SHELL
+```bash
 python -m ipykernel install --user --name 你的环境名 --display-name="你想显示的名称"
 ```
 
 例如，对于你的项目：
 
-bash
-
-```SHELL
+```bash
 #首先激活自己的虚拟环境
 conda activate CTA
 python -m ipykernel install --user --name CTA --display-name="CTA(zxr)"
@@ -165,6 +163,12 @@ python -m ipykernel install --user --name CTA --display-name="CTA(zxr)"
 - `--name`：Jupyter内部使用的名称（通常用环境名）
 - `--display-name`：在Jupyter菜单中显示的名称（可以自定义，支持中文）
 - `--user`：为当前用户安装（避免权限问题）
+
+```
+python -m ipykernel install --sys-prefix --name qt --display-name="qt"
+```
+
+**使用如上方法，可以将内核注册到用户目录而非系统目录**
 
 ### 步骤4：启动Jupyter并选择内核
 
@@ -302,5 +306,17 @@ conda-unpack
 
 ```bash
 conda create --name $ENV_NAME --clone /home/huangshuang/.conda/envs/hs_my_env
+```
+
+# 如何查看我都注册了哪些ipykernel？
+
+```bash
+jupyter kernelspec list
+```
+
+如何卸载一些kernel
+
+```bash
+jupyter kernelspec uninstall <your-kernel-name>
 ```
 
